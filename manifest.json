@@ -16,16 +16,22 @@
     "default_title": "Click here!"
   },
 
-
   "content_scripts": [{
-    "css": ["styles.css"],
     "js": ["content.js"],
     "matches": ["https://www.lazada.sg/checkout/*"]
   }],
 
   "permissions": [
     "activeTab",
-    "storage"
-  ]
+    "gcm",
+    "storage",
+    "notifications",
+    "identity"
+  ],
+
+  "background": {
+    "persistent": false,
+    "scripts": ["OneSignal.js", "background.js"]
+  }
 
 }
