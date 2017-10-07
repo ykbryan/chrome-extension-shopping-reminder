@@ -1,0 +1,31 @@
+{
+  "manifest_version": 2,
+
+  "name": "Shopping Alerts",
+  "version": "0.1.0",
+  "description": "A project to remind any users to save money",
+
+  "icons": { "16": "icon-16.png", "48": "icon-48.png", "128": "icon-128.png" },
+  "browser_action": {
+    "default_icon": "icon-256.png"
+  },
+
+  "browser_action": {
+    "default_icon": "icon-16.png",
+    "default_popup": "popup.html",
+    "default_title": "Click here!"
+  },
+
+
+  "content_scripts": [{
+    "css": ["styles.css"],
+    "js": ["content.js"],
+    "matches": ["https://www.lazada.sg/checkout/*"]
+  }],
+
+  "permissions": [
+    "activeTab",
+    "storage"
+  ]
+
+}
